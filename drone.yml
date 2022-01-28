@@ -11,6 +11,7 @@ steps:
   image: openjdk:8-jre-alpine3.9
   commands:
     - "nohup java -jar ./countries-assembly-1.0.1.jar &"
+    - "touch newFile"
 
 - name: publish  
   image: plugins/ecr
