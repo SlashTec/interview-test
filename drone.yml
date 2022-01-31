@@ -49,5 +49,6 @@ steps:
       from_secret: k8s_token
     chart: ./helm
     release: myapp-staging
+    namespace: drone
     wait: true
     force: true  
