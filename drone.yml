@@ -40,7 +40,6 @@ steps:
 #   commands:
 #     - kubectl apply -f deploy-country.yaml
     
-    
 
   - name: deploy
     image: bitsbeats/drone-helm3
