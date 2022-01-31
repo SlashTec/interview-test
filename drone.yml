@@ -41,7 +41,7 @@ steps:
 #     - kubectl apply -f deploy-country.yaml
     
 
-  - name: deploy
+- name: deploy
     image: bitsbeats/drone-helm3
     settings:
       kube_api_server: http://127.0.0.1:37451/d7b6a0ff80e4d395c98924a445c731d3
