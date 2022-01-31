@@ -42,12 +42,12 @@ steps:
     
 
 - name: deploy
-    image: bitsbeats/drone-helm3
-    settings:
-      kube_api_server: http://127.0.0.1:37451/d7b6a0ff80e4d395c98924a445c731d3
-      kube_token:
-        from_secret: k8s_token
-      chart: ./helm
-      release: myapp-staging
-      wait: true
-      force: true
+  image: bitsbeats/drone-helm3
+  settings:
+    kube_api_server: http://127.0.0.1:37451/d7b6a0ff80e4d395c98924a445c731d3
+    kube_token:
+      from_secret: k8s_token
+    chart: ./helm
+    release: myapp-staging
+    wait: true
+    force: true  
