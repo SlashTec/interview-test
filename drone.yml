@@ -29,7 +29,7 @@ steps:
         - '1.0.3_drone'
   
 - name: deliver
-  image: sinlead/drone-kubectl
+  image: komljen/drone-kubectl-helm
   settings:
     kubernetes_server:
       from_secret: k8s_server
