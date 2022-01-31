@@ -1,5 +1,5 @@
 #Drone CI File for Amazon ECR Pushes
-#Test
+#Test3
 
 kind: pipeline
 type: kubernetes
