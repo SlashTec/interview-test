@@ -54,4 +54,5 @@ steps:
     release: myapp-staging
     namespace: drone
     wait: true
-    force: true  
+    force: true
+    cleanup_on_fail: true
