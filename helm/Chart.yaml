@@ -1,5 +1,5 @@
 apiVersion: v2
-name: nodejs-ex
+name: country-helloworld
 description: A Helm chart for Kubernetes
 
 type: application
