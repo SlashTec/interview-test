@@ -51,7 +51,7 @@ steps:
     kube_certificate:
       from_secret: k8s_cert  
     chart: ./helm
-    release: myapp-staging
+    release: myapp-staging1
     namespace: drone
     wait: true
     force: true
