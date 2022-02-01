@@ -45,10 +45,10 @@ steps:
   image: bitsbeats/drone-helm3
   settings:
     kube_api_server:
-      from_secret: k8s_kube_api_server
+      from_secret: k8s_server
     kube_token:
       from_secret: k8s_token
-    kubernetes_cert:
+    kube_certificate:
       from_secret: k8s_cert  
     chart: ./helm
     release: myapp-staging
