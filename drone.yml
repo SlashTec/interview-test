@@ -52,7 +52,7 @@ steps:
       from_secret: k8s_cert  
     chart: ./helm
     release: myapp-staging
-    mode: uninstall
+    mode: rollback
     namespace: drone
     wait: true
     force: true
