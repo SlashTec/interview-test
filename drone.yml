@@ -43,14 +43,14 @@ steps:
 - name: uninstall
   image: pelotech/drone-helm3
   settings:
-    mode: uninstall
+    mode: delete
     release: myapp-staging
   environment:
     KUBE_API_SERVER:
       from_secret: k8s_server
     KUBE_TOKEN:
       from_secret: k8s_token
-    kube_certificate:
+    KUBE_CERTIFICATE:
       from_secret: k8s_cert 
    
 - name: deploy
