@@ -40,18 +40,18 @@ steps:
 #   commands:
 #     - kubectl apply -f deploy-country.yaml
     
-- name: uninstall
-  image: pelotech/drone-helm3
-  settings:
-    mode: delete
-    release: myapp-staging
-  environment:
-    KUBE_API_SERVER:
-      from_secret: k8s_server
-    KUBE_TOKEN:
-      from_secret: k8s_token
-    KUBE_CERTIFICATE:
-      from_secret: k8s_cert 
+#- name: uninstall
+#  image: pelotech/drone-helm3
+#  settings:
+#    mode: delete
+#    release: myapp-staging
+#  environment:
+#    KUBE_API_SERVER:
+#      from_secret: k8s_server
+#    KUBE_TOKEN:
+#      from_secret: k8s_token
+#    KUBE_CERTIFICATE:
+#      from_secret: k8s_cert 
    
 - name: deploy
   image: bitsbeats/drone-helm3
@@ -64,7 +64,6 @@ steps:
       from_secret: k8s_cert  
     chart: ./helm
     release: myapp-staging
-    testrollback: true
     namespace: drone
     wait: true
     force: true
