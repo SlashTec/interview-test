@@ -40,7 +40,17 @@ steps:
 #   commands:
 #     - kubectl apply -f deploy-country.yaml
     
-
+- name: uninstall
+    image: pelotech/drone-helm3
+    settings:
+      mode: uninstall
+      release: myapp-staging
+    environment:
+      KUBE_API_SERVER:
+        from_secret: k8s_server
+      KUBE_TOKEN:
+        from_secret: k8s_token
+   
 - name: deploy
   image: bitsbeats/drone-helm3
   settings:
