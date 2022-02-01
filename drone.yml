@@ -52,7 +52,7 @@ steps:
       from_secret: k8s_cert  
     chart: ./helm
     release: myapp-staging
-    mode: rollback
+    testrollback: true
     namespace: drone
     wait: true
     force: true
