@@ -30,5 +30,5 @@ autoscaling:
 namespace: "drone"
 
 ##for liveness and readiness  
-path: "/"
+path: "/health/live"
 port: 8080
