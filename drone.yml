@@ -53,17 +53,32 @@ steps:
 #    KUBE_CERTIFICATE:
 #      from_secret: k8s_cert 
    
+#- name: deploy
+#  image: bitsbeats/drone-helm3
+#  settings:
+#    kube_api_server:
+#      from_secret: k8s_server
+#    kube_token:
+#      from_secret: k8s_token
+#    kube_certificate:
+#      from_secret: k8s_cert  
+#    chart: ./helm
+#    release: myapp-staging
+#    namespace: drone
+#    wait: true
+#    force: true
+
 - name: deploy
-  image: bitsbeats/drone-helm3
+  image: pelotech/drone-helm3
   settings:
-    kube_api_server:
-      from_secret: k8s_server
-    kube_token:
-      from_secret: k8s_token
-    kube_certificate:
-      from_secret: k8s_cert  
+    mode: upgrade
     chart: ./helm
     release: myapp-staging
-    namespace: drone
-    wait: true
-    force: true
+    force_upgrade: true
+  environment:
+    KUBE_API_SERVER:
+      from_secret: k8s_server
+    KUBE_TOKEN:
+      from_secret: k8s_token
+    KUBE_CERTIFICATE:
+      from_secret: k8s_cert
